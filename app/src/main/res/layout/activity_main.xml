@@ -7,9 +7,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart"
+        android:layout_marginTop="@dimen/marginTop"
         android:text="Hello World!"
-        android:textSize="50sp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp" />
+        android:textColor="#CA1111"
+        android:textSize="@dimen/helloSize" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart"
+        android:hint="@string/editText1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart"
+        android:text="@string/buttonName"
+        android:textAllCaps="false"
+        android:textSize="@dimen/buttonTextSize" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart"
+        android:text="@string/switchText1" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart"
+        android:text="@string/checkBoxText1" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart" />
+
 
 </LinearLayout>

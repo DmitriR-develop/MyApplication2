@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="editText1">edit text</string>
+    <string name="buttonName">Button</string>
+    <string name="switchText1">fire!</string>
+    <string name="checkBoxText1">ok</string>
 </resources>
