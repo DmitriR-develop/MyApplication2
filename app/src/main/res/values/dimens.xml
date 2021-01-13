@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="marginStart">30dp</dimen>
-    <dimen name="marginTop">30dp</dimen>
-    <dimen name="helloSize">50sp</dimen>
-    <dimen name="buttonTextSize">35sp</dimen>
+
+    <dimen name="spaceHeight">400dp</dimen>
 </resources>
