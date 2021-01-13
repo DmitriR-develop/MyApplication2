@@ -2,4 +2,5 @@
 <resources>
 
     <dimen name="spaceHeight">400dp</dimen>
+    <dimen name="marginBetween">15dp</dimen>
 </resources>
