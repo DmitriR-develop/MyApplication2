@@ -1,51 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:padding="30dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginStart"
-        android:layout_marginTop="@dimen/marginTop"
-        android:text="Hello World!"
-        android:textColor="#CA1111"
-        android:textSize="@dimen/helloSize" />
-
-    <EditText
+    <Space
+        android:id="@+id/spaceTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginStart"
-        android:hint="@string/editText1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/buttonDel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginStart"
-        android:text="@string/buttonName"
-        android:textAllCaps="false"
-        android:textSize="@dimen/buttonTextSize" />
+        app:layout_constraintTop_toBottomOf="@id/spaceTop" />
 
-    <Switch
+    <Button
+        android:id="@+id/buttonBrackets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginStart"
-        android:text="@string/switchText1" />
+        app:layout_constraintEnd_toStartOf="@id/buttonPercent"
+        app:layout_constraintStart_toEndOf="@id/buttonDel" />
 
-    <CheckBox
+    <Button
+        android:id="@+id/buttonPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginStart"
-        android:text="@string/checkBoxText1" />
-
-    <ToggleButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginStart" />
-    <CalendarView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintStart_toEndOf="@id/buttonBrackets" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
