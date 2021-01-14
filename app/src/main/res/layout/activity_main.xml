@@ -3,18 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp">
+    android:padding="@dimen/screenPadding">
 
-    <EditText
+    <TextView
         android:id="@+id/numberField"
         android:layout_width="match_parent"
         android:layout_height="@dimen/spaceHeight"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--    <Space-->
-    android:id="@+id/spaceTop"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/spaceHeight"
-    app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="@dimen/editWidth1"
+        android:layout_height="@dimen/editHeight"
+        android:layout_marginTop="@dimen/marginTop"
+        android:gravity="end"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numberField" />
+
+    <EditText
+        android:id="@+id/editArithmetic"
+        android:layout_width="@dimen/editWidth2"
+        android:layout_height="@dimen/editHeight"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/editText2"
+        app:layout_constraintStart_toEndOf="@id/editText1"
+        app:layout_constraintTop_toTopOf="@id/editText1" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="@dimen/editWidth1"
+        android:layout_height="@dimen/editHeight"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editArithmetic"
+        app:layout_constraintTop_toTopOf="@id/editArithmetic" />
 
     <Button
         android:id="@+id/buttonDel"
@@ -27,7 +51,7 @@
         android:textSize="@dimen/textSize"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/numberField" />
+        app:layout_constraintTop_toBottomOf="@id/editText1" />
 
     <Button
         android:id="@+id/buttonBrackets"
@@ -226,7 +250,7 @@
         app:layout_constraintTop_toBottomOf="@id/button1" />
 
     <Button
-        android:id="@+id/buttonZero"
+        android:id="@+id/button0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/buttonColor"
@@ -246,8 +270,8 @@
         android:textColor="@color/white"
         android:textSize="@dimen/textSize"
         app:layout_constraintEnd_toStartOf="@id/buttonEqually"
-        app:layout_constraintStart_toEndOf="@id/buttonZero"
-        app:layout_constraintTop_toTopOf="@id/buttonZero" />
+        app:layout_constraintStart_toEndOf="@id/button0"
+        app:layout_constraintTop_toTopOf="@id/button0" />
 
     <Button
         android:id="@+id/buttonEqually"
