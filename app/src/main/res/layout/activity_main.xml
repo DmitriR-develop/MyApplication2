@@ -14,31 +14,34 @@
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="@dimen/editWidth1"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/editHeight"
         android:layout_marginTop="@dimen/marginTop"
         android:gravity="end"
-        app:layout_constraintHorizontal_chainStyle="packed"
+        android:inputType="none"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/numberField" />
 
-    <EditText
-        android:id="@+id/editArithmetic"
-        android:layout_width="@dimen/editWidth2"
-        android:layout_height="@dimen/editHeight"
-        android:gravity="center"
-        app:layout_constraintEnd_toStartOf="@id/editText2"
-        app:layout_constraintStart_toEndOf="@id/editText1"
-        app:layout_constraintTop_toTopOf="@id/editText1" />
+<!--    <EditText-->
+<!--        android:id="@+id/editArithmetic"-->
+<!--        android:layout_width="@dimen/editWidth2"-->
+<!--        android:layout_height="@dimen/editHeight"-->
+<!--        android:gravity="center"-->
+<!--        android:inputType="none"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/editText2"-->
+<!--        app:layout_constraintStart_toEndOf="@id/editText1"-->
+<!--        app:layout_constraintTop_toTopOf="@id/editText1" />-->
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="@dimen/editWidth1"
-        android:layout_height="@dimen/editHeight"
-        android:gravity="start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/editArithmetic"
-        app:layout_constraintTop_toTopOf="@id/editArithmetic" />
+<!--    <EditText-->
+<!--        android:id="@+id/editText2"-->
+<!--        android:layout_width="@dimen/editWidth1"-->
+<!--        android:layout_height="@dimen/editHeight"-->
+<!--        android:gravity="start"-->
+<!--        android:inputType="none"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/editArithmetic"-->
+<!--        app:layout_constraintTop_toTopOf="@id/editArithmetic" />-->
 
     <Button
         android:id="@+id/buttonDel"

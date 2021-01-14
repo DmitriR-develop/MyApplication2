@@ -8,14 +8,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Locale;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView numberField;
     private EditText editText1;
-    private EditText editArithmetic;
-    private EditText editText2;
+    //    private EditText editArithmetic;
+//    private EditText editText2;
+    private Double result = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initView() {
         numberField = findViewById(R.id.numberField);
         editText1 = findViewById(R.id.editText1);
-        editArithmetic = findViewById(R.id.editArithmetic);
-        editText2 = findViewById(R.id.editText2);
+//        editArithmetic = findViewById(R.id.editArithmetic);
+//        editText2 = findViewById(R.id.editText2);
 
         initButton1CL();
         initButton2CL();
@@ -125,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initButtonDivide() {
-        Button buttonPercent = findViewById(R.id.buttonPercent);
+        Button buttonPercent = findViewById(R.id.buttonDivide);
         buttonPercent.setOnClickListener(this);
     }
 
@@ -146,115 +145,70 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void delTextNumberField() {
         numberField.setText("");
         editText1.setText("");
-        editArithmetic.setText("");
-        editText2.setText("");
+//        editArithmetic.setText("");
+//        editText2.setText("");
     }
 
-    private void setEditText1(int number) {
-        editText1.setText(String.format("%d", number));
+    private void setEditText1(String arithmetic) {
+        editText1.append(String.format("%s", arithmetic));
     }
 
-    private void setEditText2(int number) {
-        editText2.setText(String.format("%d", number));
-    }
-
-    private void setEditArithmetic(String arithmetic) {
-        editArithmetic.setText(String.format("%s", arithmetic));
-    }
+//    private void setEditText2(int number) {
+//        editText2.append(String.format("%d", number));
+//    }
+//
+//    private void setEditArithmetic(String arithmetic) {
+//        editArithmetic.setText(String.format("%s", arithmetic));
+//    }
 
     @Override
     public void onClick(View v) {
-        if (editText1.length() == 0) {
-            switch (v.getId()) {
-                case R.id.button1:
-                    setEditText1(1);
-                    break;
-                case R.id.button2:
-                    setEditText1(2);
-                    break;
-                case R.id.button3:
-                    setEditText1(3);
-                    break;
-                case R.id.button4:
-                    setEditText1(4);
-                    break;
-                case R.id.button5:
-                    setEditText1(5);
-                    break;
-                case R.id.button6:
-                    setEditText1(6);
-                    break;
-                case R.id.button7:
-                    setEditText1(7);
-                    break;
-                case R.id.button8:
-                    setEditText1(8);
-                    break;
-                case R.id.button9:
-                    setEditText1(9);
-                    break;
-                case R.id.button0:
-                    setEditText1(0);
-                    break;
-                case R.id.buttonDel:
-                    delTextNumberField();
-            }
-        } else if (editArithmetic.length() == 0) {
-            switch (v.getId()) {
-                case R.id.buttonPlus:
-                    setEditArithmetic("+");
-                    break;
-                case R.id.buttonMinus:
-                    setEditArithmetic("-");
-                    break;
-                case R.id.buttonDivide:
-                    setEditArithmetic("/");
-                    break;
-                case R.id.buttonMultiply:
-                    setEditArithmetic("*");
-                    break;
-                case R.id.buttonDel:
-                    delTextNumberField();
-            }
-        } else if (editText2.length() == 0) {
-            switch (v.getId()) {
-                case R.id.button1:
-                    setEditText2(1);
-                    break;
-                case R.id.button2:
-                    setEditText2(2);
-                    break;
-                case R.id.button3:
-                    setEditText2(3);
-                    break;
-                case R.id.button4:
-                    setEditText2(4);
-                    break;
-                case R.id.button5:
-                    setEditText2(5);
-                    break;
-                case R.id.button6:
-                    setEditText2(6);
-                    break;
-                case R.id.button7:
-                    setEditText2(7);
-                    break;
-                case R.id.button8:
-                    setEditText2(8);
-                    break;
-                case R.id.button9:
-                    setEditText2(9);
-                    break;
-                case R.id.button0:
-                    setEditText2(0);
-                    break;
-                case R.id.buttonDel:
-                    delTextNumberField();
-            }
-        } else
-            switch (v.getId()) {
-                case R.id.buttonDel:
-                    delTextNumberField();
-            }
+        switch (v.getId()) {
+            case R.id.button1:
+                setEditText1("1");
+                break;
+            case R.id.button2:
+                setEditText1("2");
+                break;
+            case R.id.button3:
+                setEditText1("3");
+                break;
+            case R.id.button4:
+                setEditText1("4");
+                break;
+            case R.id.button5:
+                setEditText1("5");
+                break;
+            case R.id.button6:
+                setEditText1("6");
+                break;
+            case R.id.button7:
+                setEditText1("7");
+                break;
+            case R.id.button8:
+                setEditText1("8");
+                break;
+            case R.id.button9:
+                setEditText1("9");
+                break;
+            case R.id.button0:
+                setEditText1("0");
+                break;
+            case R.id.buttonDel:
+                delTextNumberField();
+                break;
+            case R.id.buttonPlus:
+                setEditText1("+");
+                break;
+            case R.id.buttonMinus:
+                setEditText1("-");
+                break;
+            case R.id.buttonDivide:
+                setEditText1("/");
+                break;
+            case R.id.buttonMultiply:
+                setEditText1("*");
+                break;
+        }
     }
 }
