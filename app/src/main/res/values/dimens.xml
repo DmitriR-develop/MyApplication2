@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <dimen name="spaceHeight">300dp</dimen>
+    <dimen name="spaceHeightPortrait">370dp</dimen>
     <dimen name="marginBetween">15dp</dimen>
     <dimen name="textSize">30sp</dimen>
     <dimen name="marginTop">5dp</dimen>
     <dimen name="screenPadding">15dp</dimen>
-    <dimen name="editHeight">50dp</dimen>
-    <dimen name="editWidth1">150dp</dimen>
-    <dimen name="editWidth2">50dp</dimen>
+    <dimen name="spaceWidthLandscape">300dp</dimen>
 </resources>

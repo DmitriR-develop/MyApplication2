@@ -11,10 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView numberField;
-    private EditText editText1;
-    //    private EditText editArithmetic;
-//    private EditText editText2;
     private Double result = null;
+    private String number;
+    private boolean isClean = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
         numberField = findViewById(R.id.numberField);
-        editText1 = findViewById(R.id.editText1);
-//        editArithmetic = findViewById(R.id.editArithmetic);
-//        editText2 = findViewById(R.id.editText2);
 
         initButton1CL();
         initButton2CL();
@@ -46,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initButtonMinus();
         initButtonDivide();
         initButtonMultiply();
+        initButtonEqually();
+        initButtonDot();
+        initButtonPlMi();
     }
 
     private void initButton1CL() {
@@ -138,77 +137,85 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonEqually.setOnClickListener(this);
     }
 
-    private void setTextNumberField(int number) {
-        numberField.setText(String.format("%d", number));
+    private void initButtonDot() {
+        Button buttonDot = findViewById(R.id.buttonDot);
+        buttonDot.setOnClickListener(this);
+    }
+
+    private void initButtonPlMi() {
+        Button buttonPlMi = findViewById(R.id.buttonPlMi);
+        buttonPlMi.setOnClickListener(this);
+    }
+
+    private void setTextNumberField() {
+        number = numberField.getText().toString();
     }
 
     private void delTextNumberField() {
         numberField.setText("");
-        editText1.setText("");
-//        editArithmetic.setText("");
-//        editText2.setText("");
     }
-
-    private void setEditText1(String arithmetic) {
-        editText1.append(String.format("%s", arithmetic));
-    }
-
-//    private void setEditText2(int number) {
-//        editText2.append(String.format("%d", number));
-//    }
-//
-//    private void setEditArithmetic(String arithmetic) {
-//        editArithmetic.setText(String.format("%s", arithmetic));
-//    }
 
     @Override
     public void onClick(View v) {
+        if (isClean) {
+            numberField.setText("");
+        }
+        isClean = false;
+        setTextNumberField();
         switch (v.getId()) {
             case R.id.button1:
-                setEditText1("1");
+                number += "1";
                 break;
             case R.id.button2:
-                setEditText1("2");
+                number += "2";
                 break;
             case R.id.button3:
-                setEditText1("3");
+                number += "3";
                 break;
             case R.id.button4:
-                setEditText1("4");
+                number += "4";
                 break;
             case R.id.button5:
-                setEditText1("5");
+                number += "5";
                 break;
             case R.id.button6:
-                setEditText1("6");
+                number += "6";
                 break;
             case R.id.button7:
-                setEditText1("7");
+                number += "7";
                 break;
             case R.id.button8:
-                setEditText1("8");
+                number += "8";
                 break;
             case R.id.button9:
-                setEditText1("9");
+                number += "9";
                 break;
             case R.id.button0:
-                setEditText1("0");
+                number += "0";
                 break;
-            case R.id.buttonDel:
-                delTextNumberField();
+//            case R.id.buttonDel:
+//                delTextNumberField();
+//                break;
+//            case R.id.buttonPlus:
+//                number += "+";
+//                break;
+//            case R.id.buttonMinus:
+//                number += "-";
+//                break;
+//            case R.id.buttonDivide:
+//                number += "/";
+//                break;
+//            case R.id.buttonMultiply:
+//                number += "*";
+//                break;
+            case R.id.buttonDot:
+                number += ".";
                 break;
-            case R.id.buttonPlus:
-                setEditText1("+");
-                break;
-            case R.id.buttonMinus:
-                setEditText1("-");
-                break;
-            case R.id.buttonDivide:
-                setEditText1("/");
-                break;
-            case R.id.buttonMultiply:
-                setEditText1("*");
-                break;
+            case R.id.buttonPlMi:
+                number += "-" + number;
         }
+        numberField.setText(number);
     }
+
+
 }
