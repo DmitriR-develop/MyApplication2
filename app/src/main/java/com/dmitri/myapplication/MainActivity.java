@@ -109,7 +109,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initButtonDelete() {
         Button buttonDel = findViewById(R.id.buttonDel);
-        buttonDel.setOnClickListener(this);
+        buttonDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delTextNumberField();
+            }
+        });
     }
 
     private void initButtonPlus() {

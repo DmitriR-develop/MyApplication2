@@ -15,47 +15,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonDel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/deleteButtonText"
         android:textColor="@android:color/holo_red_light"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/buttonBrackets"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toEndOf="@id/numberField"
         app:layout_constraintTop_toTopOf="@id/numberField" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonBrackets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bracketsButtonText"
         android:textColor="@android:color/holo_green_light"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/buttonPercent"
         app:layout_constraintStart_toEndOf="@id/buttonDel"
         app:layout_constraintTop_toTopOf="@id/buttonDel" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/percentButtonText"
         android:textColor="@android:color/holo_green_light"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/buttonDivide"
         app:layout_constraintStart_toEndOf="@id/buttonBrackets"
         app:layout_constraintTop_toTopOf="@id/buttonBrackets" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonDivide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/divideButtonText"
         android:textColor="@android:color/holo_green_light"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/buttonPercent"
         app:layout_constraintTop_toTopOf="@id/buttonPercent" />
@@ -65,7 +61,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_7_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintBottom_toTopOf="@id/button4"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@id/buttonDel"
@@ -76,7 +71,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_8_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/button9"
         app:layout_constraintStart_toEndOf="@id/button7"
         app:layout_constraintTop_toTopOf="@id/button7" />
@@ -86,7 +80,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_9_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/buttonMultiply"
         app:layout_constraintStart_toEndOf="@id/button8"
         app:layout_constraintTop_toTopOf="@id/button8" />
@@ -97,7 +90,6 @@
         android:layout_height="wrap_content"
         android:text="@string/multiplyButtonText"
         android:textColor="@android:color/holo_green_light"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button9"
         app:layout_constraintTop_toTopOf="@id/button9" />
@@ -107,7 +99,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_4_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintBottom_toTopOf="@id/button1"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@id/button7"
@@ -118,7 +109,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_5_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/button6"
         app:layout_constraintStart_toEndOf="@id/button4"
         app:layout_constraintTop_toTopOf="@id/button4" />
@@ -128,7 +118,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_6_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/buttonMinus"
         app:layout_constraintStart_toEndOf="@id/button5"
         app:layout_constraintTop_toTopOf="@id/button5" />
@@ -139,7 +128,6 @@
         android:layout_height="wrap_content"
         android:text="@string/minusButtonText"
         android:textColor="@android:color/holo_green_light"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button6"
         app:layout_constraintTop_toTopOf="@id/button6" />
@@ -149,7 +137,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_1_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintBottom_toTopOf="@id/buttonPlMi"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@id/button4"
@@ -160,7 +147,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_2_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/button3"
         app:layout_constraintStart_toEndOf="@id/button1"
         app:layout_constraintTop_toTopOf="@id/button1" />
@@ -170,7 +156,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_3_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/buttonPlus"
         app:layout_constraintStart_toEndOf="@id/button2"
         app:layout_constraintTop_toTopOf="@id/button2" />
@@ -181,7 +166,6 @@
         android:layout_height="wrap_content"
         android:text="@string/plusButtonText"
         android:textColor="@android:color/holo_green_light"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button3"
         app:layout_constraintTop_toTopOf="@id/button3" />
@@ -191,7 +175,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/plus_minusButtonText"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@id/button1"
@@ -202,7 +185,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_0_text"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/buttonDot"
         app:layout_constraintStart_toEndOf="@id/buttonPlMi"
         app:layout_constraintTop_toTopOf="@id/buttonPlMi" />
@@ -212,7 +194,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dotButtonText"
-        android:theme="@style/MyStyleTheme"
         app:layout_constraintEnd_toStartOf="@id/buttonEqually"
         app:layout_constraintStart_toEndOf="@id/button0"
         app:layout_constraintTop_toTopOf="@id/button0" />
