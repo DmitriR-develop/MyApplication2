@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/screenPadding"
+    tools:context=".SettingsActivity">
+
+    <Space
+        android:id="@+id/spaceSettings"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spaceSettingsHeightPortrait"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <RadioButton
+        android:id="@+id/buttonLightTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lightTheme"
+        app:layout_constraintStart_toStartOf="@id/spaceSettings"
+        app:layout_constraintTop_toBottomOf="@+id/spaceSettings" />
+
+    <RadioButton
+        android:id="@+id/buttonDarkTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/darkTheme"
+        app:layout_constraintStart_toStartOf="@id/buttonLightTheme"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLightTheme" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonReturn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        app:layout_constraintStart_toStartOf="@id/buttonDarkTheme"
+        app:layout_constraintTop_toBottomOf="@id/buttonDarkTheme" />
+</androidx.constraintlayout.widget.ConstraintLayout>

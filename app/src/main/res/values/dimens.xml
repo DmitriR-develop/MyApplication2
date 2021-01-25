@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="spaceHeightPortrait">370dp</dimen>
+    <dimen name="spaceHeightPortrait">170dp</dimen>
     <dimen name="marginBetween">15dp</dimen>
     <dimen name="textSize">30sp</dimen>
     <dimen name="marginTop">5dp</dimen>
     <dimen name="screenPadding">15dp</dimen>
     <dimen name="spaceWidthLandscape">300dp</dimen>
+    <dimen name="spaceSettingsHeightPortrait">200dp</dimen>
+    <dimen name="spaceSpaceHeightLand">50dp</dimen>
 </resources>

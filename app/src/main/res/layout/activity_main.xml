@@ -6,12 +6,19 @@
     android:padding="@dimen/screenPadding">
 
     <TextView
-        android:id="@+id/numberField"
+        android:id="@+id/numberFieldResult"
         android:layout_width="match_parent"
         android:layout_height="@dimen/spaceHeightPortrait"
         android:gravity="center"
         android:textSize="@dimen/textSize"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/numberField"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spaceHeightPortrait"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/numberFieldResult" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonDel"
@@ -201,4 +208,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/buttonDot"
         app:layout_constraintTop_toTopOf="@id/buttonDot" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonSettings"
+        app:layout_constraintEnd_toEndOf="@id/buttonEqually"
+        app:layout_constraintStart_toStartOf="@id/buttonPlMi"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlMi" />
 </androidx.constraintlayout.widget.ConstraintLayout>

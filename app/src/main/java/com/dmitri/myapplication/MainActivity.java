@@ -1,226 +1,226 @@
 package com.dmitri.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class MainActivity extends ThemeActivity implements View.OnClickListener {
+    private Calculator calculator = new Calculator();
     private TextView numberField;
-    private Double result = null;
-    private String number;
-    private boolean isClean = true;
+    private TextView numberFieldResult;
+    private Button button1;
+    private Button button2;
+    private Button button3;
+    private Button button4;
+    private Button button5;
+    private Button button6;
+    private Button button7;
+    private Button button8;
+    private Button button9;
+    private Button button0;
+    private Button buttonDelete;
+    private Button buttonBrackets;
+    private Button buttonPercent;
+    private Button buttonDivide;
+    private Button buttonMultiply;
+    private Button buttonMinus;
+    private Button buttonPlus;
+    private Button buttonPlMi;
+    private Button buttonDot;
+    private Button buttonEqually;
+    private Button buttonSettings;
+    private final String KEY_CALCULATOR = "Calculator";
+    private final static int REQUEST_CODE = 99;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getTheme(getThemeChoice()));
         setContentView(R.layout.activity_main);
-
+        calculator = new Calculator();
         initView();
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(KEY_CALCULATOR, calculator);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calculator = savedInstanceState.getParcelable(KEY_CALCULATOR);
+//        setShowResult();
+    }
+
     private void initView() {
+        findViews();
+        initButtons();
+    }
+
+    private void findViews() {
+        button0 = findViewById(R.id.button0);
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+        button5 = findViewById(R.id.button5);
+        button6 = findViewById(R.id.button6);
+        button7 = findViewById(R.id.button7);
+        button8 = findViewById(R.id.button8);
+        button9 = findViewById(R.id.button9);
+        buttonDelete = findViewById(R.id.buttonDel);
+        buttonBrackets = findViewById(R.id.buttonBrackets);
+        buttonPercent = findViewById(R.id.buttonPercent);
+        buttonDivide = findViewById(R.id.buttonDivide);
+        buttonMultiply = findViewById(R.id.buttonMultiply);
+        buttonMinus = findViewById(R.id.buttonMinus);
+        buttonPlus = findViewById(R.id.buttonPlus);
+        buttonPlMi = findViewById(R.id.buttonPlMi);
+        buttonDot = findViewById(R.id.buttonDot);
+        buttonEqually = findViewById(R.id.buttonEqually);
         numberField = findViewById(R.id.numberField);
-
-        initButton1CL();
-        initButton2CL();
-        initButton3CL();
-        initButton4CL();
-        initButton5CL();
-        initButton6CL();
-        initButton6CL();
-        initButton7CL();
-        initButton8CL();
-        initButton9CL();
-        initButton0CL();
-        initButtonDelete();
-        initButtonPlus();
-        initButtonMinus();
-        initButtonDivide();
-        initButtonMultiply();
-        initButtonEqually();
-        initButtonDot();
-        initButtonPlMi();
+        numberFieldResult = findViewById(R.id.numberFieldResult);
+        buttonSettings = findViewById(R.id.buttonSettings);
     }
 
-    private void initButton1CL() {
-        Button button1 = findViewById(R.id.button1);
-        button1.setOnClickListener(this);
-
-    }
-
-    private void initButton2CL() {
-        Button button2 = findViewById(R.id.button2);
-        button2.setOnClickListener(this);
-
-    }
-
-    private void initButton3CL() {
-        Button button3 = findViewById(R.id.button3);
-        button3.setOnClickListener(this);
-
-    }
-
-    private void initButton4CL() {
-        Button button4 = findViewById(R.id.button4);
-        button4.setOnClickListener(this);
-
-    }
-
-    private void initButton5CL() {
-        Button button5 = findViewById(R.id.button5);
-        button5.setOnClickListener(this);
-
-    }
-
-    private void initButton6CL() {
-        Button button6 = findViewById(R.id.button6);
-        button6.setOnClickListener(this);
-
-    }
-
-    private void initButton7CL() {
-        Button button7 = findViewById(R.id.button7);
-        button7.setOnClickListener(this);
-
-    }
-
-    private void initButton8CL() {
-        Button button8 = findViewById(R.id.button8);
-        button8.setOnClickListener(this);
-
-    }
-
-    private void initButton9CL() {
-        Button button9 = findViewById(R.id.button9);
-        button9.setOnClickListener(this);
-
-    }
-
-    private void initButton0CL() {
-        Button button0 = findViewById(R.id.button0);
+    private void initButtons() {
         button0.setOnClickListener(this);
-
-    }
-
-    private void initButtonDelete() {
-        Button buttonDel = findViewById(R.id.buttonDel);
-        buttonDel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                delTextNumberField();
-            }
-        });
-    }
-
-    private void initButtonPlus() {
-        Button buttonPlus = findViewById(R.id.buttonPlus);
-        buttonPlus.setOnClickListener(this);
-    }
-
-    private void initButtonMinus() {
-        Button buttonMinus = findViewById(R.id.buttonMinus);
-        buttonMinus.setOnClickListener(this);
-    }
-
-    private void initButtonDivide() {
-        Button buttonPercent = findViewById(R.id.buttonDivide);
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
+        button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+        button8.setOnClickListener(this);
+        button9.setOnClickListener(this);
+        buttonDelete.setOnClickListener(this);
+        buttonBrackets.setOnClickListener(this);
         buttonPercent.setOnClickListener(this);
-    }
-
-    private void initButtonMultiply() {
-        Button buttonMultiply = findViewById(R.id.buttonMultiply);
+        buttonDivide.setOnClickListener(this);
         buttonMultiply.setOnClickListener(this);
-    }
-
-    private void initButtonEqually() {
-        Button buttonEqually = findViewById(R.id.buttonEqually);
-        buttonEqually.setOnClickListener(this);
-    }
-
-    private void initButtonDot() {
-        Button buttonDot = findViewById(R.id.buttonDot);
-        buttonDot.setOnClickListener(this);
-    }
-
-    private void initButtonPlMi() {
-        Button buttonPlMi = findViewById(R.id.buttonPlMi);
+        buttonMinus.setOnClickListener(this);
+        buttonPlus.setOnClickListener(this);
         buttonPlMi.setOnClickListener(this);
-    }
-
-    private void setTextNumberField() {
-        number = numberField.getText().toString();
-    }
-
-    private void delTextNumberField() {
-        numberField.setText("");
+        buttonDot.setOnClickListener(this);
+        buttonEqually.setOnClickListener(this);
+        buttonSettings.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if (isClean) {
-            numberField.setText("");
-        }
-        isClean = false;
-        setTextNumberField();
         switch (v.getId()) {
-            case R.id.button1:
-                number += "1";
+            case (R.id.button0):
+                setNumber(R.id.button0);
                 break;
-            case R.id.button2:
-                number += "2";
+            case (R.id.button1):
+                setNumber(R.id.button1);
                 break;
-            case R.id.button3:
-                number += "3";
+            case (R.id.button2):
+                setNumber(R.id.button2);
                 break;
-            case R.id.button4:
-                number += "4";
+            case (R.id.button3):
+                setNumber(R.id.button3);
                 break;
-            case R.id.button5:
-                number += "5";
+            case (R.id.button4):
+                setNumber(R.id.button4);
                 break;
-            case R.id.button6:
-                number += "6";
+            case (R.id.button5):
+                setNumber(R.id.button5);
                 break;
-            case R.id.button7:
-                number += "7";
+            case (R.id.button6):
+                setNumber(R.id.button6);
                 break;
-            case R.id.button8:
-                number += "8";
+            case (R.id.button7):
+                setNumber(R.id.button7);
                 break;
-            case R.id.button9:
-                number += "9";
+            case (R.id.button8):
+                setNumber(R.id.button8);
                 break;
-            case R.id.button0:
-                number += "0";
+            case (R.id.button9):
+                setNumber(R.id.button9);
                 break;
-//            case R.id.buttonDel:
-//                delTextNumberField();
-//                break;
-//            case R.id.buttonPlus:
-//                number += "+";
-//                break;
-//            case R.id.buttonMinus:
-//                number += "-";
-//                break;
-//            case R.id.buttonDivide:
-//                number += "/";
-//                break;
-//            case R.id.buttonMultiply:
-//                number += "*";
-//                break;
-            case R.id.buttonDot:
-                number += ".";
+            case (R.id.buttonDel):
+                calculator.clear();
                 break;
-            case R.id.buttonPlMi:
-                number += "-" + number;
+            case (R.id.buttonEqually):
+                calculator.setEqual();
+                break;
+            case (R.id.buttonPlus):
+                calculator.setChangeSing();
+                break;
+            case (R.id.buttonSettings):
+                settingsClick();
+                break;
         }
-        numberField.setText(number);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != REQUEST_CODE) {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+        if (resultCode == RESULT_OK) {
+            recreate();
+        }
+    }
 
+//    private void setShowResult() {
+//        numberFieldResult.setText(calculator.getStringResult());
+//        numberField.setText(calculator.getStringFirstNumber());
+//    }
+
+    private void settingsClick() {
+        Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(runSettings);
+    }
+
+    private String getViewText(int id) {
+        if (id == R.id.button0) {
+            return (String) button0.getText();
+        } else if (id == R.id.button1) {
+            return (String) button1.getText();
+        } else if (id == R.id.button2) {
+            return (String) button2.getText();
+        } else if (id == R.id.button3) {
+            return (String) button3.getText();
+        } else if (id == R.id.button4) {
+            return (String) button4.getText();
+        } else if (id == R.id.button5) {
+            return (String) button5.getText();
+        } else if (id == R.id.button6) {
+            return (String) button6.getText();
+        } else if (id == R.id.button7) {
+            return (String) button7.getText();
+        } else if (id == R.id.button8) {
+            return (String) button8.getText();
+        } else if (id == R.id.button9) {
+            return (String) button9.getText();
+        } else if (id == R.id.buttonMultiply) {
+            return (String) buttonMultiply.getText();
+        } else if (id == R.id.buttonDivide) {
+            return (String) buttonDivide.getText();
+        } else if (id == R.id.buttonMinus) {
+            return (String) buttonMinus.getText();
+        } else if (id == R.id.buttonPlus) {
+            return (String) buttonPlus.getText();
+        } else {
+            return "";
+        }
+    }
+
+    private void setNumber(int buttonId) {
+        calculator.setNumber(getViewText(buttonId));
+//        setShowResult();
+    }
 }

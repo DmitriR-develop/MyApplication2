@@ -22,4 +22,8 @@
     <string name="button_0_text">0</string>
     <string name="dotButtonText">,</string>
     <string name="equallyButtonText">=</string>
+    <string name="lightTheme">Светлая тема</string>
+    <string name="darkTheme">Тенмая тема</string>
+    <string name="back">Вернуться</string>
+    <string name="buttonSettings">Настройки</string>
 </resources>
